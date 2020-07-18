@@ -18,3 +18,11 @@ Code	Output
 
 when the + operator is used with a String value, it is called the concatenation operator. 
 
+Nested arrays 
+var myArray = [[],[]];
+
+// Setup
+var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
+// Retorna 8 
+var myData = myArray[2][1];
+
