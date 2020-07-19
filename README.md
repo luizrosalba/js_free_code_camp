@@ -93,8 +93,13 @@ However, if your object has any non-string properties, JavaScript will automatic
 
 There are two ways to access the properties of an object: dot notation (.) and bracket notation ([]), similar to an array.
 
-Dot notation is what you use when you know the name of the property (nome conhecido) you're trying to access ahead of time. If the property of the object you are trying to access has a space in its name (ou é uma variavel), you will need to use bracket notation.
+Dot notation is what you use when you know the name of the property (nome conhecido) you're trying to access ahead of time.
 
+Se a prop nao existe e vc quer criar use a notação ponto e inicialize (se nao inicializar nao vai criar )
+
+If the property of the object you are trying to access has a space in its name (ou é uma variavel que já existe) , you will need to use bracket notation.
+Se ela já existe ou é uma variável , use bracket sem aspas 
+criar com aspas fará ela criar uma prop com  o nome da variável e nao com o conteúdo da variável . 
 
 ### We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
 
@@ -108,3 +113,73 @@ myObj.hasOwnProperty("top");    // true
 myObj.hasOwnProperty("middle"); // false
 
 
+JavaScript Object Notation or JSON is a related data interchange format used to store data.
+
+// Setup
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+var gloveBoxContents = myStorage.car.inside["glove box"]; // acessando glove box 
+
+
+/// desafio da musica 
+
+// Setup
+var collection = {
+  2548: {
+    album: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: [
+      "Let It Rock",
+      "You Give Love a Bad Name"
+    ]
+  },
+  2468: {
+    album: "1999",
+    artist: "Prince",
+    tracks: [
+      "1999",
+      "Little Red Corvette"
+    ]
+  },
+  1245: {
+    artist: "Robert Palmer",
+    tracks: [ ]
+  },
+  5439: {
+    album: "ABBA Gold"
+  }
+};
+
+// Only change code below this line
+function updateRecords(id, prop, value) {
+  
+  if (value=="" && collection[id].hasOwnProperty(prop))  /// se value for vazio delete e tiver a prop 
+    delete collection[id][prop]; /// remove a prop 
+
+  if (prop!="tracks" && value!="")  /// se prop nao for track e value nao estiver vazia 
+  {
+      collection[id][prop]=value; 
+  }
+  if (prop=="tracks" && value!="")  /// se prop for tracks e value nao estiver vazia 
+  {
+    if (!collection[id].hasOwnProperty(prop)) /// se nao tem tracks 
+    collection[id][prop]=[value]; /// cria e inicializa 
+    else /// se jah tem tracks 
+    collection[id][prop].push(value); /// pusha value para o  final de tracks 
+  }
+  return collection;
+}
+
+//updateRecords(5439, "tracks", "Take a Chance on Me")
+//updateRecords(2548, "tracks", "")
+console.log (collection);
