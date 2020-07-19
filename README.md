@@ -79,4 +79,32 @@ var cat = {
   "enemies": ["Water", "Dogs"]
 };
 
+var anotherObject = {
+  make: "Ford",
+  5: "five",
+  "model": "focus"
+};
+
+
+### deleta propriedade make do objeto anotherObject
+delete anotherObject.make; 
+
+However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.
+
+There are two ways to access the properties of an object: dot notation (.) and bracket notation ([]), similar to an array.
+
+Dot notation is what you use when you know the name of the property (nome conhecido) you're trying to access ahead of time. If the property of the object you are trying to access has a space in its name (ou é uma variavel), you will need to use bracket notation.
+
+
+### We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
+
+Example
+
+var myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+myObj.hasOwnProperty("top");    // true
+myObj.hasOwnProperty("middle"); // false
+
 
