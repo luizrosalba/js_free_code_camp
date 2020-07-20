@@ -96,6 +96,7 @@ There are two ways to access the properties of an object: dot notation (.) and b
 Dot notation is what you use when you know the name of the property (nome conhecido) you're trying to access ahead of time.
 
 Se a prop nao existe e vc quer criar use a notação ponto e inicialize (se nao inicializar nao vai criar )
+para acessar o valor use [][]
 
 If the property of the object you are trying to access has a space in its name (ou é uma variavel que já existe) , you will need to use bracket notation.
 Se ela já existe ou é uma variável , use bracket sem aspas 
@@ -131,7 +132,7 @@ var myStorage = {
 var gloveBoxContents = myStorage.car.inside["glove box"]; // acessando glove box 
 
 
-/// desafio da musica 
+### /// desafio da musica 
 
 
 // Setup
@@ -184,3 +185,67 @@ function updateRecords(id, prop, value) {
 //updateRecords(5439, "tracks", "Take a Chance on Me")
 //updateRecords(2548, "tracks", "")
 console.log (collection);
+
+
+
+
+### /// iterando todos os elementos de um array 
+function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for (var i=0; i < arr.length; i++) {
+   for (var j=0; j < arr[i].length; j++) {
+      product*=arr[i][j];
+  }
+}
+  // Only change code above this line
+  return product;
+}
+
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+
+
+
+### gerar numero entre dois intervalos excluindo o max  
+
+function randomRange(myMin, myMax) {
+  // Only change code below this line
+  
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+  
+  // Only change code above this line
+}
+
+
+### parseInt em outras bases The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
+
+function convertToInteger(str,radix) {
+  return parseInt(str,radix);
+}
+convertToInteger("10011",2); /// converte a string para um inteiro na base binaria 
+
+
+### primeiro a função recursiva vai até a ultima opção e depois outras funções são ativadas exemplo : 
+
+
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
+
+At first, this seems counterintuitive since the value of n decreases, but the values in the final array are increasing. This happens because the push happens last, after the recursive call has returned. At the point where n is pushed into the array, countup(n - 1) has already been evaluated and returned [1, 2, ..., n - 1].
+
+/// preenche recursivamente de startNum até end Num 
+function rangeOfNumbers(startNum, endNum) {
+  if (startNum === endNum) return [startNum];
+    const arr = rangeOfNumbers(startNum+1,endNum);
+    arr.unshift(startNum);
+    return arr;
+};
+
