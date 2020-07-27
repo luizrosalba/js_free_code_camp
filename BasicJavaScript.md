@@ -147,6 +147,26 @@ const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
 const arr = [1,3,3,4,3];  
 const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
 
+## sort ordenacao de acordo com condição 
+
+students.sort((current,next) => current.grade - next.grade) /// ordena do menor pro maior 
+students.sort((current,next) => next.grade - current.grade) /// ordena do maior pro menor 
+
+## reverse inverte o array 
+const arr = [1,2,3,4,5];  
+arr.reverse(); /// [5 , 4 , 3 , 2 , 1]
+
+## transformando um array em outro tipo de dados 
+join junta todos os elementos de um array separados por um delimitar e retorna uma string 
+
+const arr = [1,2,3,4,5];  
+arr.join('-'); /// "1-2-3-4-5"
+
+## reduce Retorna um novo tipo de dado iterando cada posicao de um array 
+
+const arr = [1,2,3,4,5];  
+arr.reduce ((total,value)=> total+= value, 0); /// para cada item executa afuncao o primeiro arg eh o retorno comeca com um inteiro com valor 0 
+
 
 ## Escopo 
 
