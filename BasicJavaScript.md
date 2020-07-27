@@ -18,7 +18,7 @@ Code	Output
 
 when the + operator is used with a String value, it is called the concatenation operator. 
 
-Nested arrays 
+## Nested arrays 
 var myArray = [[],[]];
 
 // Setup
@@ -26,16 +26,86 @@ var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
 // Retorna 8 
 var myData = myArray[2][1];
 
-//vetor 
+## vetores (arrays)
 var removedFromMyArray=array.push();  /// adiciona ultima pos
 var removedFromMyArray=array.pop();  /// remove ultimo pos
-var removedFromMyArray=array.shift(); // remove primeiro pos
-myArray.unshift(["Paul",35]); /// adiciona na primeira posicao
+var removedFromMyArray=array.shift(); // remove primeiro pos e retorna o elemento removido 
+const tamanho  = myArray.unshift(["Paul",35]); /// adiciona na primeira posicao ao ser aplicado, retorna o tamanho do array  
+const alimentos = frutas.concat(salgados) ; // faz um merge concatenando em alimentos o array salgados e frutas 
+
+### slice :  Fatia o array 
+
+const arr = [1,2,3,4,5];  
+Arr.slice(0,2); // [1,2]
+Arr.slice(2); // [3,4,5]
+Arr.slice(-1); // [5]
+Arr.slice(-3); // [3,4,5]
+
+### splice :  Não é imutavel, Altera o array adicionando novos elementos enquanto remove elementos antigos 
+const arr = [1,2,3,4,5];  
+Arr.splice(2); // remove a partir da posicao 2 [3,4,5] 
+console.log(arr); /// [1,2]
+Arr.splice(0,0,'first'); // [] /// inicio, quanto itens remove o que adicionar a partir da primeira posicao 
+console.log(arr); /// ["fisrt",1,2]; 
+
+
+## Iterando vetores (arrays)
+
+const arr = [1,2,3,4,5];  
+arr.forEach((value,index) => {console.log(`${index}:${value}`)});
+
+frutas.forEach((fruta,index,arr) => console.log(index,fruta,arr));
+
+## map  Retorna um novo array de mesmo tamanho iterando cada item de um array 
+
+const arr = [1,2,3,4,5];  
+arr.map (value => value *2); // retorna um novo array [2,4,6,8,10]
+
+## flat  Retorna um novo array com todos os elementos de um sub-array concatenados de forma recursiva de acordo com a profundidade especificada (depth) 
+const arr = [1,2,[3,4]];  
+arr.flat(); // retorna um novo array com profundidade 1 [1,2,3,4]
+arr.flat(2); // retorna um novo array com profundidade 2 , neste caso não terá diferenca mas se houvessem outros arrays dentro de arr só iria até a segunda camanda de arr 
+
+## flatMap   Retorna um novo array assim como faz a função map e executa um flat de profundidade 1 
+const arr = [1,2,3,4];  
+arr.flatMap (value => [value *2]); // retorna um novo array [2,4,6,8]
+arr.flatMap (value => [[value *2]]); // retorna um novo array [[2],[4],[6],[8]]
+
+## keys  retorna um array iterator que contem as chaves para cada elemento do array 
+const arr = [1,2,3,4];  
+const arrIterator = arr.keys();
+arrIterator.next(); {value:0,done:false};
+arrIterator.next(); {value:1,done:false};
+arrIterator.next(); {value:2,done:false};
+arrIterator.next(); {value:3,done:true};
+
+## values : retorna um array iterator que contém os valores para cada elemento do array 
+const arr = [1,2,3,4];  
+const arrIterator = arr.values();
+arrIterator.next(); {value:1,done:false};
+arrIterator.next(); {value:2,done:false};
+arrIterator.next(); {value:3,done:false};
+arrIterator.next(); {value:4,done:true};
+
+## entries : retorna um par chave valor para cada elemento do array 
+const arr = [1,2,3,4];  
+const arrIterator = arr.values();
+arrIterator.next(); {value:[0,1],done:false};
+arrIterator.next(); {value:[1,2],done:false};
+arrIterator.next(); {value:[2,3],done:false};
+arrIterator.next(); {value:[3,4],done:true};
+
+
+
+
+
+## Escopo 
 
 Variables which are used without the var keyword are automatically created in the global scope.(mesmo dentro de funções)
 var dentro de função cria uma variavel com escopo local
 It is possible to have both local and global variables with the same name. When you do this, the local variable takes precedence over the global variable.
 
+## Undefined 
 se uma função nao retorna nada , seu retorno é undefined. 
 === compara valor e tipo 
 
