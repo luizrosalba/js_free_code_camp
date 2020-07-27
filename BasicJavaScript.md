@@ -1,4 +1,4 @@
-# js_free_code_camp
+# Basic JavaScript
 Cursando o Javascript algorithms and data Structues certification 
 ## Basics 
 
