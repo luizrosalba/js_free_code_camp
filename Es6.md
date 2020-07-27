@@ -92,7 +92,7 @@ const doubler = item => item * 2;
 // multiplies the first input value by the second and returns it
 const multiplier = (item, multi) => item * multi;
 
-
+### parametro default 
 const greeting = (name = "Anonymous") => "Hello " + name;
 console.log(greeting("John")); // Hello John
 console.log(greeting()); // Hello Anonymous
