@@ -96,7 +96,56 @@ arrIterator.next(); {value:[2,3],done:false};
 arrIterator.next(); {value:[3,4],done:true};
 
 
+## Buscar elementos 
 
+## find Retorna o primeiro item de um array que satisfaz uma condição 
+
+const arr = [1,2,3,4];  
+const firstGreatherThanTwo = arr.find (value => value > 2) ; /// 3 
+
+## findIndex Retorna o indice do primeiro item de um array que satisfaz uma condição 
+
+const arr = [1,2,3,4];  
+const firstGreatherThanTwo = arr.findIndex (value => value > 2) ; /// 2
+
+
+## filter Retorna um array com todos os elementos que satisfazem uma condição 
+
+
+const arr = [1,2,3,4];  
+const allValuesGreatherThanTwo = arr.filter (value => value > 2) ; /// [3,4]
+
+## indexOf Retorna o primeiro índice em que um elemento pode ser encontrado em um array 
+const arr = [1,3,3,4,3];  
+const firstIndexOfItem = arr.indexOf(3); /// 1
+
+## lastIndexOf Retorna o ultimo índice em que um elemento pode ser encontrado em um array 
+const arr = [1,3,3,4,3];  
+const firstIndexOfItem = arr.indexOf(3); /// 4
+
+## includes Retorna um booleano verificando se determinado elemento existe no array 
+const arr = [1,3,3,4,3];  
+const hasItemOne = arr.includes(1); /// true 
+const hasItemTwo = arr.includes(2); /// false 
+
+
+## some Retorna um booleano verificando se pelo menos um item de um array satisfaz a condição 
+
+const arr = [1,3,3,4,3];  
+const hasSomeEvenNumber = arr.some (value => value % 2 ===0 ) ; /// true
+
+
+
+## some Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
+
+const arr = [1,3,3,4,3];  
+const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
+
+
+## some Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
+
+const arr = [1,3,3,4,3];  
+const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
 
 
 ## Escopo 
