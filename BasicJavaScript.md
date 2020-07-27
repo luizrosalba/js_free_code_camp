@@ -168,6 +168,8 @@ const arr = [1,2,3,4,5];
 arr.reduce ((total,value)=> total+= value, 0); /// para cada item executa afuncao o primeiro arg eh o retorno comeca com um inteiro com valor 0 
 
 
+
+
 ## Escopo 
 
 Variables which are used without the var keyword are automatically created in the global scope.(mesmo dentro de funções)
