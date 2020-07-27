@@ -1,5 +1,5 @@
 # js_free_code_camp
-meus testes do free code camp 
+Cursando o Javascript algorithms and data Structues certification 
 ## Basics 
 
 JavaScript provides eight different data types which are undefined, null, boolean, string, symbol, bigint, number, and object.
