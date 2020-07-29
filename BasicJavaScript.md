@@ -25,7 +25,16 @@ var myArray = [[],[]];
 var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
 var myData = myArray[2][1];// Retorna 8 
 
-## vetores (arrays)
+## Inicializando 
+O método fill é um método mutável, ele irá mudar o objeto em si, e retorná-lo, não somente uma cópia do objeto.
+arr.fill(valor[, ínicio = 0[, fim = this.length]]) 
+[1, 2, 3].fill(4);               // [4, 4, 4]   preenche com 4 tudo 
+[1, 2, 3].fill(4, 1);            // [1, 4, 4]   preenche com 4 a partir da posicao 1 
+[1, 2, 3].fill(4, 1, 2);         // [1, 4, 3]   preenche com 4 a partir da posicao 1 até 2 
+Array(3).fill(4);                // [4, 4, 4]   preenche um vetor de tres posições com 4 
+[].fill.call({ length: 3 }, 4);  // {0: 4, 1: 4, 2: 4, length: 3}
+
+## Alterando vetores (arrays)
 var removedFromMyArray=array.push();  /// adiciona ultima pos
 var removedFromMyArray=array.pop();  /// remove ultimo pos
 var removedFromMyArray=array.shift(); // remove primeiro pos e retorna o elemento removido 
