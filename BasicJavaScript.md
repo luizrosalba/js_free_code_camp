@@ -32,23 +32,6 @@ var removedFromMyArray=array.shift(); // remove primeiro pos e retorna o element
 const tamanho  = myArray.unshift(["Paul",35]); /// adiciona na primeira posicao ao ser aplicado, retorna o tamanho do array  
 const alimentos = frutas.concat(salgados) ; // faz um merge concatenando em alimentos o array salgados e frutas 
 
-### slice :  
-Imutável Fatia o array 
-
-const arr = [1,2,3,4,5];  
-Arr.slice(0,2); // [1,2]
-Arr.slice(2); // [3,4,5]
-Arr.slice(-1); // [5]
-Arr.slice(-3); // [3,4,5]
-
-### splice : 
-
-Não é imutavel, Altera o array adicionando novos elementos enquanto remove elementos antigos 
-const arr = [1,2,3,4,5];  
-Arr.splice(2); // remove a partir da posicao 2 [3,4,5] 
-console.log(arr); /// [1,2]
-Arr.splice(0,0,'first'); // [] /// inicio, quanto itens remove o que adicionar a partir da primeira posicao 
-console.log(arr); /// ["fisrt",1,2]; 
 
 
 ## Iterando vetores (arrays)
@@ -73,8 +56,25 @@ function multiplyAll(arr) {
 
 multiplyAll([[1,2],[3,4],[5,6,7]]);
 
+## Métodos de Arrays
 
+### slice :  
+Imutável Fatia o array 
 
+const arr = [1,2,3,4,5];  
+Arr.slice(0,2); // [1,2]
+Arr.slice(2); // [3,4,5]
+Arr.slice(-1); // [5]
+Arr.slice(-3); // [3,4,5]
+
+### splice : 
+
+Não é imutavel, Altera o array adicionando novos elementos enquanto remove elementos antigos 
+const arr = [1,2,3,4,5];  
+Arr.splice(2); // remove a partir da posicao 2 [3,4,5] 
+console.log(arr); /// [1,2]
+Arr.splice(0,0,'first'); // [] /// inicio, quanto itens remove o que adicionar a partir da primeira posicao 
+console.log(arr); /// ["fisrt",1,2]; 
 
 
 ## map  
