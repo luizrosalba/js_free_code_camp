@@ -19,6 +19,11 @@ Code	Output
 when the + operator is used with a String value, it is called the concatenation operator. 
 
 ## Nested arrays 
+
+Site bom com documentação 
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
+
 var myArray = [[],[]];
 
 // Setup
