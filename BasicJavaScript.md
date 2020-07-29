@@ -32,7 +32,8 @@ var removedFromMyArray=array.shift(); // remove primeiro pos e retorna o element
 const tamanho  = myArray.unshift(["Paul",35]); /// adiciona na primeira posicao ao ser aplicado, retorna o tamanho do array  
 const alimentos = frutas.concat(salgados) ; // faz um merge concatenando em alimentos o array salgados e frutas 
 
-### slice :  Fatia o array 
+### slice :  
+Imutável Fatia o array 
 
 const arr = [1,2,3,4,5];  
 Arr.slice(0,2); // [1,2]
@@ -40,7 +41,9 @@ Arr.slice(2); // [3,4,5]
 Arr.slice(-1); // [5]
 Arr.slice(-3); // [3,4,5]
 
-### splice :  Não é imutavel, Altera o array adicionando novos elementos enquanto remove elementos antigos 
+### splice : 
+
+Não é imutavel, Altera o array adicionando novos elementos enquanto remove elementos antigos 
 const arr = [1,2,3,4,5];  
 Arr.splice(2); // remove a partir da posicao 2 [3,4,5] 
 console.log(arr); /// [1,2]
@@ -55,22 +58,44 @@ arr.forEach((value,index) => {console.log(`${index}:${value}`)});
 
 frutas.forEach((fruta,index,arr) => console.log(index,fruta,arr));
 
-## map  Retorna um novo array de mesmo tamanho iterando cada item de um array 
+### Iterando todos os elementos de um array 
+function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for (var i=0; i < arr.length; i++) {
+   for (var j=0; j < arr[i].length; j++) {
+      product*=arr[i][j];
+  }
+}
+  // Only change code above this line
+  return product;
+}
 
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+
+
+
+
+
+## map  
+Retorna um novo array de mesmo tamanho iterando cada item de um array 
 const arr = [1,2,3,4,5];  
 arr.map (value => value *2); // retorna um novo array [2,4,6,8,10]
 
-## flat  Retorna um novo array com todos os elementos de um sub-array concatenados de forma recursiva de acordo com a profundidade especificada (depth) 
+## flat  
+Retorna um novo array com todos os elementos de um sub-array concatenados de forma recursiva de acordo com a profundidade especificada (depth) 
 const arr = [1,2,[3,4]];  
 arr.flat(); // retorna um novo array com profundidade 1 [1,2,3,4]
 arr.flat(2); // retorna um novo array com profundidade 2 , neste caso não terá diferenca mas se houvessem outros arrays dentro de arr só iria até a segunda camanda de arr 
 
-## flatMap   Retorna um novo array assim como faz a função map e executa um flat de profundidade 1 
+## flatMap  
+ Retorna um novo array assim como faz a função map e executa um flat de profundidade 1 
 const arr = [1,2,3,4];  
 arr.flatMap (value => [value *2]); // retorna um novo array [2,4,6,8]
 arr.flatMap (value => [[value *2]]); // retorna um novo array [[2],[4],[6],[8]]
 
-## keys  retorna um array iterator que contem as chaves para cada elemento do array 
+## keys  
+retorna um array iterator que contem as chaves para cada elemento do array 
 const arr = [1,2,3,4];  
 const arrIterator = arr.keys();
 arrIterator.next(); {value:0,done:false};
@@ -78,7 +103,8 @@ arrIterator.next(); {value:1,done:false};
 arrIterator.next(); {value:2,done:false};
 arrIterator.next(); {value:3,done:true};
 
-## values : retorna um array iterator que contém os valores para cada elemento do array 
+## values : 
+retorna um array iterator que contém os valores para cada elemento do array 
 const arr = [1,2,3,4];  
 const arrIterator = arr.values();
 arrIterator.next(); {value:1,done:false};
@@ -86,7 +112,8 @@ arrIterator.next(); {value:2,done:false};
 arrIterator.next(); {value:3,done:false};
 arrIterator.next(); {value:4,done:true};
 
-## entries : retorna um par chave valor para cada elemento do array 
+## entries : 
+retorna um par chave valor para cada elemento do array 
 const arr = [1,2,3,4];  
 const arrIterator = arr.values();
 arrIterator.next(); {value:[0,1],done:false};
@@ -97,75 +124,84 @@ arrIterator.next(); {value:[3,4],done:true};
 
 ## Buscar elementos 
 
-## find Retorna o primeiro item de um array que satisfaz uma condição 
-
+## find 
+Retorna o primeiro item de um array que satisfaz uma condição 
 const arr = [1,2,3,4];  
 const firstGreatherThanTwo = arr.find (value => value > 2) ; /// 3 
 
-## findIndex Retorna o indice do primeiro item de um array que satisfaz uma condição 
-
+## findIndex 
+Retorna o indice do primeiro item de um array que satisfaz uma condição 
 const arr = [1,2,3,4];  
 const firstGreatherThanTwo = arr.findIndex (value => value > 2) ; /// 2
 
 
-## filter Retorna um array com todos os elementos que satisfazem uma condição 
-
+## filter
+ Retorna um array com todos os elementos que satisfazem uma condição 
 
 const arr = [1,2,3,4];  
 const allValuesGreatherThanTwo = arr.filter (value => value > 2) ; /// [3,4]
 
-## indexOf Retorna o primeiro índice em que um elemento pode ser encontrado em um array 
+## indexOf 
+Retorna o primeiro índice em que um elemento pode ser encontrado em um array 
 const arr = [1,3,3,4,3];  
 const firstIndexOfItem = arr.indexOf(3); /// 1
 
-## lastIndexOf Retorna o ultimo índice em que um elemento pode ser encontrado em um array 
+## lastIndexOf 
+Retorna o ultimo índice em que um elemento pode ser encontrado em um array 
 const arr = [1,3,3,4,3];  
 const firstIndexOfItem = arr.indexOf(3); /// 4
 
-## includes Retorna um booleano verificando se determinado elemento existe no array 
+## includes 
+Retorna um booleano verificando se determinado elemento existe no array 
 const arr = [1,3,3,4,3];  
 const hasItemOne = arr.includes(1); /// true 
 const hasItemTwo = arr.includes(2); /// false 
 
 
-## some Retorna um booleano verificando se pelo menos um item de um array satisfaz a condição 
+## some 
+Retorna um booleano verificando se pelo menos um item de um array satisfaz a condição 
 
 const arr = [1,3,3,4,3];  
 const hasSomeEvenNumber = arr.some (value => value % 2 ===0 ) ; /// true
 
 
 
-## some Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
+## some 
+Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
 
 const arr = [1,3,3,4,3];  
 const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
 
 
-## some Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
+## some 
+Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
 
 const arr = [1,3,3,4,3];  
 const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
 
-## sort ordenacao de acordo com condição 
+## sort 
+ordenacao de acordo com condição 
 
 students.sort((current,next) => current.grade - next.grade) /// ordena do menor pro maior 
 students.sort((current,next) => next.grade - current.grade) /// ordena do maior pro menor 
 
-## reverse inverte o array 
+## reverse 
+inverte o array 
 const arr = [1,2,3,4,5];  
 arr.reverse(); /// [5 , 4 , 3 , 2 , 1]
 
-## transformando um array em outro tipo de dados 
+## join 
+transformando um array em outro tipo de dados 
 join junta todos os elementos de um array separados por um delimitar e retorna uma string 
 
 const arr = [1,2,3,4,5];  
 arr.join('-'); /// "1-2-3-4-5"
 
-## reduce Retorna um novo tipo de dado iterando cada posicao de um array 
+## reduce
+Retorna um novo tipo de dado iterando cada posicao de um array 
 
 const arr = [1,2,3,4,5];  
 arr.reduce ((total,value)=> total+= value, 0); /// para cada item executa afuncao o primeiro arg eh o retorno comeca com um inteiro com valor 0 
-
 
 
 
@@ -226,7 +262,10 @@ var anotherObject = {
 };
 
 
-### deleta propriedade make do objeto anotherObject
+### delete
+
+propriedade make do objeto anotherObject
+
 delete anotherObject.make; 
 
 However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.
@@ -242,7 +281,8 @@ If the property of the object you are trying to access has a space in its name (
 Se ela já existe ou é uma variável , use bracket sem aspas 
 criar com aspas fará ela criar uma prop com  o nome da variável e nao com o conteúdo da variável . 
 
-### We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
+### .hasOwnProperty()
+We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
 
 Example
 
@@ -274,6 +314,7 @@ var gloveBoxContents = myStorage.car.inside["glove box"]; // acessando glove box
 
 ### /// desafio da musica 
 
+```javascript
 
 // Setup
 var collection = {
@@ -325,25 +366,7 @@ function updateRecords(id, prop, value) {
 //updateRecords(5439, "tracks", "Take a Chance on Me")
 //updateRecords(2548, "tracks", "")
 console.log (collection);
-
-
-
-
-### /// iterando todos os elementos de um array 
-function multiplyAll(arr) {
-  var product = 1;
-  // Only change code below this line
-  for (var i=0; i < arr.length; i++) {
-   for (var j=0; j < arr[i].length; j++) {
-      product*=arr[i][j];
-  }
-}
-  // Only change code above this line
-  return product;
-}
-
-multiplyAll([[1,2],[3,4],[5,6,7]]);
-
+```
 
 
 ### gerar numero entre dois intervalos excluindo o max  
@@ -357,7 +380,8 @@ function randomRange(myMin, myMax) {
 }
 
 
-### parseInt em outras bases The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
+### parseInt ,
+Em outras bases The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
 
 function convertToInteger(str,radix) {
   return parseInt(str,radix);
@@ -365,7 +389,9 @@ function convertToInteger(str,radix) {
 convertToInteger("10011",2); /// converte a string para um inteiro na base binaria 
 
 
-### primeiro a função recursiva vai até a ultima opção e depois outras funções são ativadas exemplo : 
+###  a função recursiva 
+
+primeiro a função recursiva vai até a ultima opção e depois outras funções são ativadas exemplo : 
 
 
 function countup(n) {
