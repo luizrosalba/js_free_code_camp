@@ -113,20 +113,55 @@ let chewieRegex = /Aa*/; // Change this line
 // Only change code above this line
 let result = chewieQuote.match(chewieRegex);
 ```
+Regular Expressions: Find Characters with Lazy Matching
+Lazy and Greedy matches : 
+Regular expressions are by default greedy
+Lazy (?)-> encontra a menor match de um regex 
+Greedy (default) -> encontra a maior match de um regex 
+
+regex: /t[a-z]*i/ 
+string "titanic". 
+
+This regex is basically a pattern that starts with t, ends with i, and has some letters in between.
+"titanic" matched greedy /t[a-z]*i/ return ["titani"] It finds the largest sub-string possible to fit the pattern.
+"titanic" matched lazy  /t[a-z]*?i/ returns ["ti"].It finds the smallest sub-string possible to fit the pattern.
+
+Note
+Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
+
 
 ```Javascript
+
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<h.*?>/; // retorna um vetor com <h.> dentro dele  
+let result = text.match(myRegex);
 
 ```
+sem os colchetes, o operador ^ procura pela ocorrencia de um padrão no começo de uma string  
+```Javascript
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
+```
+o operador $ procura pela ocorrencia no final de uma string 
 
 ```Javascript
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
 
 ```
-
-
+Regular Expressions: Match All Letters and Numbers
+/\w/ é um atalho para uma regex que busca todas as letras e numeros (e tambem o underscore _ )  sem considerar o case sensitive 
 ```Javascript
-
-```
-```Javascript
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = "42";
+let varNames = "important_var";
+longHand.test(numbers); // Returns true
+shortHand.test(numbers); // Returns true
+longHand.test(varNames); // Returns true
+shortHand.test(varNames); // Returns true
 
 ```
 ```Javascript
