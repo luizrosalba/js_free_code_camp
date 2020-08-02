@@ -1,3 +1,5 @@
+https://www.typescriptlang.org/docs/handbook/interfaces.html#:~:text=Interfaces%20are%20capable%20of%20describing,the%20interface%20a%20call%20signature.
+
 Differences between Abstract Classes and Interface
 An interface contains a set of methods that haven’t been implemented. A class that references the interface must override these methods. This allows the class to be a part of two classes at one time (multiple-inheritance) – once as a normal sub-class and once as a “sub-class” of an interface.
 
