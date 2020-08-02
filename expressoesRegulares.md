@@ -1,4 +1,5 @@
 ## Expressões regulares 
+https://regexr.com/
 Regular Expressions: Using the Test MethodPassed
 Verificando se existe a string myregex dentro da string mystring 
 Atenção ! é case sensitive 
@@ -86,7 +87,7 @@ let myRegex = /[a-z0-9]/ig;
 jennyStr.match(myRegex);
 ```
 Regular Expressions: Match Single Characters Not Specified
-Negando caracteres 
+Negando caracteres (^dentro de parenteses) 
 For example, /[^aeiou]/gi matches all characters that are not a vowel. 
 Note that characters like ., !, [, @, / and white space are matched -
 the negated vowel character set only excludes the vowel characters.
@@ -164,14 +165,106 @@ longHand.test(varNames); // Returns true
 shortHand.test(varNames); // Returns true
 
 ```
+Verificando as condições . Se uma entrada é verdadeira , o teste deve retornar verdadeira. Se nao encontra a opção retorna falsa . 
+1) Usernames can only use alpha-numeric characters.
+2) The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+3) Username letters can be lowercase and uppercase.
+4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
 ```Javascript
+let username = "l00";
+// ^[a-z] começa com uma letra 
+//[0-9][0-9]+ - ou termina com dois ou mais numeros 
+// | aplica mais uma condição 
+// [a-z]+ -ou has one or more letters next
+// \d* - termina com zero ou mais numeros no final 
+///$ - final da entrada 
+let userCheck = /^[a-z]([0-9][0-9]+|[a-z]+\d*)$/i;
+let result = userCheck.test(username);
+console.log(result);
+```
+Regular Expressions: Match Whitespace
+Busca por espaço, enter, tab,  form feed, e nova linha   \s 
+[ \r\t\f\n\v]
+
+```Javascript
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let spaceRegex = /\s/g;
+whiteSpace.match(spaceRegex);
+// Returns [" ", " "]
+```
+Busca por nao whitespace 
+
+```Javascript
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let nonSpaceRegex = /\S/g;
+whiteSpace.match(nonSpaceRegex).length; // Returns 32
+```
+Regular Expressions: Specify Upper and Lower Number of Matches
+Buscar por um determinado numero de matches 
+
+```Javascript
+let A4 = "aaaah";
+let A2 = "aah";
+let multipleA = /a{3,5}h/; /// busca por a aparecendo entre 3 a 5 vezes na string
+multipleA.test(A4); // Returns true
+multipleA.test(A2); // Returns false
+```
+egular Expressions: Specify Only the Lower Number of Matches
+```Javascript
+let A4 = "haaaah";
+let A2 = "haah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleA = /ha{3,}h/;
+multipleA.test(A4); // Returns true
+multipleA.test(A2); // Returns false
+multipleA.test(A100); // Returns true
+```
+Regular Expressions: Check for All or None
+? Retorna true para 0 ou uma ocorrencia do caractere anterior
+```Javascript
+let american = "color";
+let british = "colour";
+let rainbowRegex= /colou?r/;
+rainbowRegex.test(american); // Returns true
+rainbowRegex.test(british); // Returns true
+```
+Regular Expressions: Positive and Negative Lookahead
+positive lookahead will look to make sure the element in the search pattern is there, but won't actually match it.  A positive lookahead is used as (?=...) where the ... is the required part that is not matched.
+
+a negative lookahead will look to make sure the element in the search pattern is not there.  A negative lookahead is used as (?!...) where the ... is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+
+Uso com match : 
+Positive lookahead retorna o prefixo quando ocorre o valor buscado (?=) 
+Negative lookahead retorna o prefixo quando não ocorre o valor buscado (?=)
+```Javascript
+let quit = "qu";
+let noquit = "qt";
+let quRegex= /q(?=u)/; /// busca q seguido de u sem retornar o u 
+let qRegex = /q(?!u)/; /// busca q nao seguido de u sem retornar u 
+quit.match(quRegex); // Returns ["q"]
+noquit.match(qRegex); // Returns ["q"]
+```
+Uso com Test 
+outro exemplo de lookahead 
+Retorna quando ocorre entre 3 a 6 caracteres  \w{3,6}
+com pelo menos um digito  \d
+incluindo letras e caracteres especiais \D*
+```Javascript
+let password = "abc123";
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+checkPass.test(password); // Returns true
+```
+Comeca com nao digito, tem cinco de comprimento e tem dois digitos seguidos
+```Javascript
+let sampleWord = "bana12";
+let pwRegex = /^(?=\D)(\w{2,})(?=\d{2,})/ // Change this line
+let result = pwRegex.test(sampleWord);
 
 ```
 ```Javascript
 
 ```
-
 ```Javascript
 
 ```
-
