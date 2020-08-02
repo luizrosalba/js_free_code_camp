@@ -1,7 +1,7 @@
 ## Expressões regulares 
 https://regexr.com/
 
-
+```Javascript
 abc…	Letters
 123…	Digits
 \d	Any Digit
@@ -27,6 +27,7 @@ abc…	Letters
 (.*)	Capture all
 (abc|def)	Matches abc or def
 
+```
 
 Regular Expressions: Using the Test MethodPassed
 Verificando se existe a string myregex dentro da string mystring 
