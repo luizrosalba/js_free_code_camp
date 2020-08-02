@@ -20,6 +20,8 @@ when the + operator is used with a String value, it is called the concatenation 
 
 ## Criando arrays 
 
+
+
 const arr = [1,2,3]; 
 ou
 
@@ -54,6 +56,8 @@ var myData = myArray[2][1];// Retorna 8
 
 ## Inicializando 
 O método fill é um método mutável, ele irá mudar o objeto em si, e retorná-lo, não somente uma cópia do objeto.
+```Javascript
+```
 arr.fill(valor[, ínicio = 0[, fim = this.length]]) 
 [1, 2, 3].fill(4);               // [4, 4, 4]   preenche com 4 tudo 
 [1, 2, 3].fill(4, 1);            // [1, 4, 4]   preenche com 4 a partir da posicao 1 
@@ -62,6 +66,8 @@ Array(3).fill(4);                // [4, 4, 4]   preenche um vetor de tres posiç
 [].fill.call({ length: 3 }, 4);  // {0: 4, 1: 4, 2: 4, length: 3}
 
 ## Alterando vetores (arrays)
+```Javascript
+```
 var removedFromMyArray=array.push();  /// adiciona ultima pos
 var removedFromMyArray=array.pop();  /// remove ultimo pos
 var removedFromMyArray=array.shift(); // remove primeiro pos e retorna o elemento removido 
@@ -71,13 +77,16 @@ const alimentos = frutas.concat(salgados) ; // faz um merge concatenando em alim
 
 
 ## Iterando vetores (arrays)
-
+```Javascript
+```
 const arr = [1,2,3,4,5];  
 arr.forEach((value,index) => {console.log(`${index}:${value}`)});
 
 frutas.forEach((fruta,index,arr) => console.log(index,fruta,arr));
 
 ### Iterando todos os elementos de um array 
+```Javascript
+```
 function multiplyAll(arr) {
   var product = 1;
   // Only change code below this line
@@ -96,6 +105,8 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 
 ### slice :  
 Imutável Fatia o array 
+```Javascript
+```
 
 const arr = [1,2,3,4,5];  
 Arr.slice(0,2); // [1,2]
@@ -106,6 +117,8 @@ Arr.slice(-3); // [3,4,5]
 ### splice : 
 
 Não é imutavel, Altera o array adicionando novos elementos enquanto remove elementos antigos 
+```Javascript
+```
 const arr = [1,2,3,4,5];  
 Arr.splice(2); // remove a partir da posicao 2 [3,4,5] 
 console.log(arr); /// [1,2]
@@ -115,23 +128,32 @@ console.log(arr); /// ["fisrt",1,2];
 
 ## map  
 Retorna um novo array de mesmo tamanho iterando cada item de um array 
+```Javascript
+```
 const arr = [1,2,3,4,5];  
 arr.map (value => value *2); // retorna um novo array [2,4,6,8,10]
 
 ## flat  
 Retorna um novo array com todos os elementos de um sub-array concatenados de forma recursiva de acordo com a profundidade especificada (depth) 
+```Javascript
+```
 const arr = [1,2,[3,4]];  
 arr.flat(); // retorna um novo array com profundidade 1 [1,2,3,4]
 arr.flat(2); // retorna um novo array com profundidade 2 , neste caso não terá diferenca mas se houvessem outros arrays dentro de arr só iria até a segunda camanda de arr 
 
 ## flatMap  
  Retorna um novo array assim como faz a função map e executa um flat de profundidade 1 
+
+```Javascript
+```
 const arr = [1,2,3,4];  
 arr.flatMap (value => [value *2]); // retorna um novo array [2,4,6,8]
 arr.flatMap (value => [[value *2]]); // retorna um novo array [[2],[4],[6],[8]]
 
 ## keys  
 retorna um array iterator que contem as chaves para cada elemento do array 
+```Javascript
+```
 const arr = [1,2,3,4];  
 const arrIterator = arr.keys();
 arrIterator.next(); {value:0,done:false};
@@ -141,6 +163,8 @@ arrIterator.next(); {value:3,done:true};
 
 ## values : 
 retorna um array iterator que contém os valores para cada elemento do array 
+```Javascript
+```
 const arr = [1,2,3,4];  
 const arrIterator = arr.values();
 arrIterator.next(); {value:1,done:false};
@@ -150,6 +174,8 @@ arrIterator.next(); {value:4,done:true};
 
 ## entries : 
 retorna um par chave valor para cada elemento do array 
+```Javascript
+```
 const arr = [1,2,3,4];  
 const arrIterator = arr.values();
 arrIterator.next(); {value:[0,1],done:false};
@@ -162,33 +188,44 @@ arrIterator.next(); {value:[3,4],done:true};
 
 ## find 
 Retorna o primeiro item de um array que satisfaz uma condição 
+```Javascript
+```
 const arr = [1,2,3,4];  
 const firstGreatherThanTwo = arr.find (value => value > 2) ; /// 3 
 
 ## findIndex 
 Retorna o indice do primeiro item de um array que satisfaz uma condição 
+```Javascript
+```
 const arr = [1,2,3,4];  
 const firstGreatherThanTwo = arr.findIndex (value => value > 2) ; /// 2
 
 
 ## filter
  Retorna um array com todos os elementos que satisfazem uma condição 
-
+```Javascript
+```
 const arr = [1,2,3,4];  
 const allValuesGreatherThanTwo = arr.filter (value => value > 2) ; /// [3,4]
 
 ## indexOf 
 Retorna o primeiro índice em que um elemento pode ser encontrado em um array 
+```Javascript
+```
 const arr = [1,3,3,4,3];  
 const firstIndexOfItem = arr.indexOf(3); /// 1
 
 ## lastIndexOf 
 Retorna o ultimo índice em que um elemento pode ser encontrado em um array 
+```Javascript
+```
 const arr = [1,3,3,4,3];  
 const firstIndexOfItem = arr.indexOf(3); /// 4
 
 ## includes 
 Retorna um booleano verificando se determinado elemento existe no array 
+```Javascript
+```
 const arr = [1,3,3,4,3];  
 const hasItemOne = arr.includes(1); /// true 
 const hasItemTwo = arr.includes(2); /// false 
@@ -196,7 +233,8 @@ const hasItemTwo = arr.includes(2); /// false
 
 ## some 
 Retorna um booleano verificando se pelo menos um item de um array satisfaz a condição 
-
+```Javascript
+```
 const arr = [1,3,3,4,3];  
 const hasSomeEvenNumber = arr.some (value => value % 2 ===0 ) ; /// true
 
@@ -204,38 +242,45 @@ const hasSomeEvenNumber = arr.some (value => value % 2 ===0 ) ; /// true
 
 ## some 
 Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
-
+```Javascript
+```
 const arr = [1,3,3,4,3];  
 const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
 
 
 ## some 
 Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
-
+```Javascript
+```
 const arr = [1,3,3,4,3];  
 const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
 
 ## sort 
 ordenacao de acordo com condição 
-
+```Javascript
+```
 students.sort((current,next) => current.grade - next.grade) /// ordena do menor pro maior 
 students.sort((current,next) => next.grade - current.grade) /// ordena do maior pro menor 
 
 ## reverse 
 inverte o array 
+```Javascript
+```
 const arr = [1,2,3,4,5];  
 arr.reverse(); /// [5 , 4 , 3 , 2 , 1]
 
 ## join 
 transformando um array em outro tipo de dados 
 join junta todos os elementos de um array separados por um delimitar e retorna uma string 
-
+```Javascript
+```
 const arr = [1,2,3,4,5];  
 arr.join('-'); /// "1-2-3-4-5"
 
 ## reduce
 Retorna um novo tipo de dado iterando cada posicao de um array 
-
+```Javascript
+```
 const arr = [1,2,3,4,5];  
 arr.reduce ((total,value)=> total+= value, 0); /// para cada item executa afuncao o primeiro arg eh o retorno comeca com um inteiro com valor 0 
 
@@ -253,6 +298,8 @@ se uma função nao retorna nada , seu retorno é undefined.
 
 
 ### /// switch case faz === nas comparações 
+```Javascript
+```
 function switchOfStuff(val) {
   var answer = "";
   // Only change code below this line
@@ -278,12 +325,16 @@ switchOfStuff(1);
 
 
 ### Retornando undefined
+```Javascript
+```
 function retornaUndefined (){
 return ; 
 }
 
 
 ### objects 
+```Javascript
+```
 var cat = {
   "name": "Whiskers",
   "legs": 4,
@@ -321,7 +372,8 @@ criar com aspas fará ela criar uma prop com  o nome da variável e nao com o co
 We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
 
 Example
-
+```Javascript
+```
 var myObj = {
   top: "hat",
   bottom: "pants"
@@ -331,7 +383,8 @@ myObj.hasOwnProperty("middle"); // false
 
 
 JavaScript Object Notation or JSON is a related data interchange format used to store data.
-
+```Javascript
+```
 // Setup
 var myStorage = {
   "car": {
@@ -406,7 +459,8 @@ console.log (collection);
 
 
 ### gerar numero entre dois intervalos excluindo o max  
-
+```Javascript
+```
 function randomRange(myMin, myMax) {
   // Only change code below this line
   
@@ -418,7 +472,8 @@ function randomRange(myMin, myMax) {
 
 ### parseInt ,
 Em outras bases The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
-
+```Javascript
+```
 function convertToInteger(str,radix) {
   return parseInt(str,radix);
 }
@@ -429,7 +484,8 @@ convertToInteger("10011",2); /// converte a string para um inteiro na base binar
 
 primeiro a função recursiva vai até a ultima opção e depois outras funções são ativadas exemplo : 
 
-
+```Javascript
+```
 function countup(n) {
   if (n < 1) {
     return [];
@@ -442,7 +498,8 @@ function countup(n) {
 console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
 
 At first, this seems counterintuitive since the value of n decreases, but the values in the final array are increasing. This happens because the push happens last, after the recursive call has returned. At the point where n is pushed into the array, countup(n - 1) has already been evaluated and returned [1, 2, ..., n - 1].
-
+```Javascript
+```
 /// preenche recursivamente de startNum até end Num 
 function rangeOfNumbers(startNum, endNum) {
   if (startNum === endNum) return [startNum];
