@@ -262,9 +262,51 @@ let pwRegex = /^(?=\D)(\w{2,})(?=\d{2,})/ // Change this line
 let result = pwRegex.test(sampleWord);
 
 ```
+
+Regular Expressions: Check For Mixed Grouping of Characters
 ```Javascript
+let testStr = "Pumpkin";
+let testRegex = /P(engu|umpk)in/;
+testRegex.test(testStr);
+// Returns true
+```
+Ignorando palavra no meio 
+
+```Javascript
+let myString = "Franklin D. Roosevelt";
+let myRegex = /(?=.*Franklin|Eleanor)(?=.*Roosevelt).*/; // Change this line
+let result = myRegex.test(myString); // Change this line
+// After passing the challenge experiment with myString and see how the grouping works
+```
 
 ```
 ```Javascript
 
 ```
+```Javascript
+
+```
+```
+```Javascript
+
+```
+```Javascript
+
+```
+
+```
+```Javascript
+
+```
+```Javascript
+
+```
+
+```
+```Javascript
+
+```
+```Javascript
+
+```
+
