@@ -218,85 +218,89 @@ const firstGreatherThanTwo = arr.findIndex (value => value > 2) ; /// 2
 ## filter
  Retorna um array com todos os elementos que satisfazem uma condição 
 ```Javascript
-```
 const arr = [1,2,3,4];  
 const allValuesGreatherThanTwo = arr.filter (value => value > 2) ; /// [3,4]
+
+```
 
 ## indexOf 
 Retorna o primeiro índice em que um elemento pode ser encontrado em um array 
 ```Javascript
-```
 const arr = [1,3,3,4,3];  
 const firstIndexOfItem = arr.indexOf(3); /// 1
+
+```
 
 ## lastIndexOf 
 Retorna o ultimo índice em que um elemento pode ser encontrado em um array 
 ```Javascript
-```
+
 const arr = [1,3,3,4,3];  
 const firstIndexOfItem = arr.indexOf(3); /// 4
+```
 
 ## includes 
 Retorna um booleano verificando se determinado elemento existe no array 
 ```Javascript
-```
 const arr = [1,3,3,4,3];  
 const hasItemOne = arr.includes(1); /// true 
 const hasItemTwo = arr.includes(2); /// false 
+
+```
 
 
 ## some 
 Retorna um booleano verificando se pelo menos um item de um array satisfaz a condição 
 ```Javascript
-```
 const arr = [1,3,3,4,3];  
 const hasSomeEvenNumber = arr.some (value => value % 2 ===0 ) ; /// true
+```
 
 
 
 ## some 
 Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
 ```Javascript
-```
 const arr = [1,3,3,4,3];  
 const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
+```
 
 
 ## some 
 Retorna um booleano verificando se todos os itens de um array satisfazem uma condição 
 ```Javascript
-```
 const arr = [1,3,3,4,3];  
 const allEvenNumbers = arr.every (value => value % 2 ===0 ) ; /// false
+```
 
 ## sort 
 ordenacao de acordo com condição 
 ```Javascript
-```
 students.sort((current,next) => current.grade - next.grade) /// ordena do menor pro maior 
 students.sort((current,next) => next.grade - current.grade) /// ordena do maior pro menor 
+```
 
 ## reverse 
 inverte o array 
 ```Javascript
-```
 const arr = [1,2,3,4,5];  
 arr.reverse(); /// [5 , 4 , 3 , 2 , 1]
+```
 
 ## join 
 transformando um array em outro tipo de dados 
 join junta todos os elementos de um array separados por um delimitar e retorna uma string 
 ```Javascript
-```
 const arr = [1,2,3,4,5];  
 arr.join('-'); /// "1-2-3-4-5"
+```
 
 ## reduce
 Retorna um novo tipo de dado iterando cada posicao de um array 
 ```Javascript
-```
 const arr = [1,2,3,4,5];  
 arr.reduce ((total,value)=> total+= value, 0); /// para cada item executa afuncao o primeiro arg eh o retorno comeca com um inteiro com valor 0 
+```
 
 
 
@@ -313,7 +317,6 @@ se uma função nao retorna nada , seu retorno é undefined.
 
 ### /// switch case faz === nas comparações 
 ```Javascript
-```
 function switchOfStuff(val) {
   var answer = "";
   // Only change code below this line
@@ -338,17 +341,17 @@ function switchOfStuff(val) {
 switchOfStuff(1);
 
 
+```
 ### Retornando undefined
 ```Javascript
-```
 function retornaUndefined (){
 return ; 
 }
 
+```
 
 ### objects 
 ```Javascript
-```
 var cat = {
   "name": "Whiskers",
   "legs": 4,
@@ -362,6 +365,7 @@ var anotherObject = {
   "model": "focus"
 };
 
+```
 
 ### delete
 
@@ -387,7 +391,6 @@ We can use the .hasOwnProperty(propname) method of objects to determine if that 
 
 Example
 ```Javascript
-```
 var myObj = {
   top: "hat",
   bottom: "pants"
@@ -395,10 +398,10 @@ var myObj = {
 myObj.hasOwnProperty("top");    // true
 myObj.hasOwnProperty("middle"); // false
 
+```
 
 JavaScript Object Notation or JSON is a related data interchange format used to store data.
 ```Javascript
-```
 // Setup
 var myStorage = {
   "car": {
@@ -414,6 +417,7 @@ var myStorage = {
 
 var gloveBoxContents = myStorage.car.inside["glove box"]; // acessando glove box 
 
+```
 
 ### /// desafio da musica 
 
@@ -474,7 +478,6 @@ console.log (collection);
 
 ### gerar numero entre dois intervalos excluindo o max  
 ```Javascript
-```
 function randomRange(myMin, myMax) {
   // Only change code below this line
   
@@ -482,24 +485,26 @@ function randomRange(myMin, myMax) {
   
   // Only change code above this line
 }
+```
+
 
 
 ### parseInt ,
 Em outras bases The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
 ```Javascript
-```
 function convertToInteger(str,radix) {
   return parseInt(str,radix);
 }
 convertToInteger("10011",2); /// converte a string para um inteiro na base binaria 
 
 
+```
+
 ###  a função recursiva 
 
 primeiro a função recursiva vai até a ultima opção e depois outras funções são ativadas exemplo : 
 
 ```Javascript
-```
 function countup(n) {
   if (n < 1) {
     return [];
@@ -510,10 +515,11 @@ function countup(n) {
   }
 }
 console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
+```
+
 
 At first, this seems counterintuitive since the value of n decreases, but the values in the final array are increasing. This happens because the push happens last, after the recursive call has returned. At the point where n is pushed into the array, countup(n - 1) has already been evaluated and returned [1, 2, ..., n - 1].
 ```Javascript
-```
 /// preenche recursivamente de startNum até end Num 
 function rangeOfNumbers(startNum, endNum) {
   if (startNum === endNum) return [startNum];
@@ -521,5 +527,7 @@ function rangeOfNumbers(startNum, endNum) {
     arr.unshift(startNum);
     return arr;
 };
+```
+
 
 
