@@ -1,5 +1,33 @@
 ## Expressões regulares 
 https://regexr.com/
+
+
+abc…	Letters
+123…	Digits
+\d	Any Digit
+\D	Any Non-digit character
+.	Any Character
+\.	Period
+[abc]	Only a, b, or c
+[^abc]	Not a, b, nor c
+[a-z]	Characters a to z
+[0-9]	Numbers 0 to 9
+\w	Any Alphanumeric character
+\W	Any Non-alphanumeric character
+{m}	m Repetitions
+{m,n}	m to n Repetitions
+*	Zero or more repetitions
++	One or more repetitions
+?	Optional character
+\s	Any Whitespace
+\S	Any Non-whitespace character
+^…$	Starts and ends
+(…)	Capture Group
+(a(bc))	Capture Sub-group
+(.*)	Capture all
+(abc|def)	Matches abc or def
+
+
 Regular Expressions: Using the Test MethodPassed
 Verificando se existe a string myregex dentro da string mystring 
 Atenção ! é case sensitive 
@@ -278,35 +306,49 @@ let myRegex = /(?=.*Franklin|Eleanor)(?=.*Roosevelt).*/; // Change this line
 let result = myRegex.test(myString); // Change this line
 // After passing the challenge experiment with myString and see how the grouping works
 ```
+Regular Expressions: Reuse Patterns Using Capture Groups
+You can search for repeat substrings using capture groups. Parentheses, ( and ), are used to find repeat substrings. You put the regex of the pattern that will repeat in between the parentheses.
 
-```
+To specify where that repeat string will appear, you use a backslash (\) and then a number. This number starts at 1 and increases with each additional capture group you use. An example would be \1 to match the first group.
+Using the .match() method on a string will return an array with the string it matches, along with its capture group.
+
 ```Javascript
-
+let repeatStr = "regex regex";
+let repeatRegex = /(\w+)\s\1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
 ```
+Aqui ele procura o caractere inicio com um digito ou mais ,procura um espaço , repete o primeiro grupo (mais de um caractere), repete o espaço e procura o caractere de fim . Ele só respondera a essa regex entao 100 100 100 100 nao funciona pois ele nao encontra o caractere de fim e inicio com tres repeticoes entre eles   
 ```Javascript
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\2\1$/; // Change this line
+let result = reRegex.test(repeatNum);
 
 ```
-```
+Regular Expressions: Use Capture Groups to Search and Replace
+
 ```Javascript
-
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue");
+// Returns "The sky is blue."
 ```
+You can also access capture groups in the replacement string with dollar signs ($).
 ```Javascript
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let result = str.replace(fixRegex, replaceText);
+console.log (result);
 
 ```
+Regular Expressions: Remove Whitespace from Start and End
+Seleciona e remove um texto do inicio e final de uma string 
 
-```
 ```Javascript
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/; // Change this line
+let result = hello.replace(wsRegex, ""); // Change this line
+console.log (result);
 
 ```
-```Javascript
-
-```
-
-```
-```Javascript
-
-```
-```Javascript
-
-```
-
