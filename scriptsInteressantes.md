@@ -17,6 +17,23 @@ console.log(data.map((_, i) => i).filter(e => data[e] === 3));
     const numEntreInicioEFim = (pos.map((valor, indice) => valor)
     .filter(e => e>=inicio && e <=fim )).length;
 ```
+Retorna valores únicos de um array ordenado 
+```Javascript
+       let valUnicos = [...new Set(vet.sort((current,next) => current - next))]; 
+```
 
-    
-    
+
+ ```Javascript
+    ```
+     ```Javascript
+    ```
+     ```Javascript
+    ```
+     ```Javascript
+    ```
+     ```Javascript
+    ```
+     ```Javascript
+    ```
+     ```Javascript
+    ```
