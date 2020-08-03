@@ -9,3 +9,14 @@ console.log(data);
 // With ES6 arrow syntax
 console.log(data.map((_, i) => i).filter(e => data[e] === 3));
 ```
+
+
+/// retorna o numero de elementos em pos que  estão entre inicio e fim 
+
+```Javascript
+    const numEntreInicioEFim = (pos.map((valor, indice) => valor)
+    .filter(e => e>=inicio && e <=fim )).length;
+```
+
+    
+    
