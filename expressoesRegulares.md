@@ -160,6 +160,24 @@ Note
 Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
 
 
+´´´Javascript
++-------------------+-----------------+------------------------------+
+| Greedy quantifier | Lazy quantifier |        Description           |
++-------------------+-----------------+------------------------------+
+| *                 | *?              | Star Quantifier: 0 or more   |
+| +                 | +?              | Plus Quantifier: 1 or more   |
+| ?                 | ??              | Optional Quantifier: 0 or 1  |
+| {n}               | {n}?            | Quantifier: exactly n        |
+| {n,}              | {n,}?           | Quantifier: n or more        |
+| {n,m}             | {n,m}?          | Quantifier: between n and m  |
++-------------------+-----------------+------------------------------+
+Add a ? to a quantifier to make it ungreedy i.e lazy.
+´´´
+Example:
+test string : stackoverflow
+greedy reg expression : s.*o output: stackoverflo
+lazy reg expression : s.*?o output: stacko
+
 ```Javascript
 
 let text = "<h1>Winter is coming</h1>";
